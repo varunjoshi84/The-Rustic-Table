@@ -95,22 +95,6 @@ Ensure you have the following installed:
 
 ---
 
-## 🔐 Test Accounts
-
-The database seeder automatically generates the following test accounts:
-
-**Admin User**
-- **Email:** `admin@example.com`
-- **Password:** `password`
-
-**Standard User**
-- **Email:** `user@example.com`
-- **Password:** `password`
-
-*(Additional test users with Indian names are also seeded automatically).*
-
----
-
 ## 📜 License
 
 The Rustic Table is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
