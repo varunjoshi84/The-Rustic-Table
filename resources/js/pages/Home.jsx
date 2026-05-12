@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiSearch, FiClock, FiStar, FiChevronRight } from 'react-icons/fi';
 import axios from '../utils/axios';
+import { useAuth } from '../context/AuthContext';
 
 const categories = [
     { name: 'Italian Classic', type: 'Italian', image: 'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&q=80&w=800' },
@@ -13,6 +14,7 @@ const categories = [
 
 export default function Home() {
     const navigate = useNavigate();
+    const { user } = useAuth();
     const [recipes, setRecipes] = useState([]);
     const [loading, setLoading] = useState(true);
     const [searchQuery, setSearchQuery] = useState('');
@@ -187,9 +189,15 @@ export default function Home() {
                 <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-4xl font-heading font-bold text-white mb-6">Share Your Family Recipes</h2>
                     <p className="text-xl text-rustic-200 mb-10 italic">Join our community of home cooks and help preserve culinary traditions.</p>
-                    <Link to="/register" className="inline-block bg-white text-rustic-900 font-bold text-lg py-4 px-10 rounded-full shadow-lg hover:bg-rustic-100 hover:scale-105 transition-all">
-                        Join The Table
-                    </Link>
+                    {user ? (
+                        <Link to={user.role === 'admin' ? '/admin' : '/dashboard'} className="inline-block bg-white text-rustic-900 font-bold text-lg py-4 px-10 rounded-full shadow-lg hover:bg-rustic-100 hover:scale-105 transition-all">
+                            Go to Dashboard
+                        </Link>
+                    ) : (
+                        <Link to="/register" className="inline-block bg-white text-rustic-900 font-bold text-lg py-4 px-10 rounded-full shadow-lg hover:bg-rustic-100 hover:scale-105 transition-all">
+                            Join The Table
+                        </Link>
+                    )}
                 </div>
             </div>
         </div>

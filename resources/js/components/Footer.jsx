@@ -59,10 +59,10 @@ export default function Footer() {
                             <div>
                                 <h3 className="text-sm font-semibold text-rustic-400 tracking-wider uppercase">Cuisines</h3>
                                 <ul className="mt-4 space-y-4">
-                                    <li><Link to="/categories?type=Italian" className="text-base text-rustic-300 hover:text-white transition-colors">Italian Classic</Link></li>
-                                    <li><Link to="/categories?type=Indian" className="text-base text-rustic-300 hover:text-white transition-colors">Rustic Indian</Link></li>
-                                    <li><Link to="/categories?type=French" className="text-base text-rustic-300 hover:text-white transition-colors">French Country</Link></li>
-                                    <li><Link to="/categories?type=Desserts" className="text-base text-rustic-300 hover:text-white transition-colors">Vintage Desserts</Link></li>
+                                    <li><Link to="/recipes?type=Italian" className="text-base text-rustic-300 hover:text-white transition-colors">Italian Classic</Link></li>
+                                    <li><Link to="/recipes?type=Indian" className="text-base text-rustic-300 hover:text-white transition-colors">Rustic Indian</Link></li>
+                                    <li><Link to="/recipes?type=French" className="text-base text-rustic-300 hover:text-white transition-colors">French Country</Link></li>
+                                    <li><Link to="/recipes?type=Desserts" className="text-base text-rustic-300 hover:text-white transition-colors">Vintage Desserts</Link></li>
                                 </ul>
                             </div>
                             <div className="mt-12 md:mt-0">

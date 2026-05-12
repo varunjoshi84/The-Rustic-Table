@@ -44,6 +44,21 @@ export default function AllRecipes() {
         fetchRecipes();
     }, [filters, page]);
 
+    useEffect(() => {
+        const queryParams = new URLSearchParams(location.search);
+        const urlType = queryParams.get('type');
+        const urlSearch = queryParams.get('search');
+        
+        if (urlType !== null || urlSearch !== null) {
+            setFilters(prev => ({
+                ...prev,
+                cuisine_type: urlType !== null ? urlType : prev.cuisine_type,
+                search: urlSearch !== null ? urlSearch : prev.search
+            }));
+            setPage(1);
+        }
+    }, [location.search]);
+
     const handleFilterChange = (e) => {
         setFilters({ ...filters, [e.target.name]: e.target.value });
         setPage(1); // Reset to first page on filter change

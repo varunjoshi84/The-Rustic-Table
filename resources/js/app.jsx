@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import BackToTopButton from './components/BackToTopButton';
+import GuestRoute from './components/GuestRoute';
 
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -34,8 +35,8 @@ function App() {
                             <Route path="/about" element={<About />} />
                             <Route path="/contact" element={<Contact />} />
                             <Route path="/blog" element={<Blog />} />
-                            <Route path="/login" element={<Login />} />
-                            <Route path="/register" element={<Register />} />
+                            <Route path="/login" element={<GuestRoute><Login /></GuestRoute>} />
+                            <Route path="/register" element={<GuestRoute><Register /></GuestRoute>} />
                             <Route path="/dashboard" element={<Dashboard />} />
                             <Route path="/dashboard/upload" element={<RecipeForm />} />
                             <Route path="/dashboard/edit/:id" element={<RecipeForm />} />
