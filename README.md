@@ -1,58 +1,116 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🥘 The Rustic Table
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**The Rustic Table** is a premium, vintage-themed recipe-sharing platform. It beautifully merges a classic, cozy cooking aesthetic with modern, high-performance web technologies. Users can discover, upload, like, and save family recipes from various cuisines including Italian Classic, Rustic Indian, French Country, and Vintage Desserts.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## ✨ Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Robust Authentication:** Secure API authentication powered by Laravel Sanctum with Role-Based Access Control (RBAC) for standard users and administrators.
+- **Full-Stack Recipe Management:** Complete CRUD functionality for recipes with local image uploading and secure media handling.
+- **Interactive Community:** Users can like, save, and comment on their favorite recipes.
+- **Advanced Filtering & Search:** Find the perfect meal by searching through titles, cuisines, and nested ingredient lists.
+- **Automated Mail System:** Integrated newsletter subscriptions and a contact form that dispatches automated HTML email notifications to both admins and users.
+- **Premium Vintage UI:** A stunning, responsive frontend built with React, styled with Tailwind CSS, and enriched with smooth micro-animations using Framer Motion.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 🏗️ Technology Stack
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Frontend:** React JS, Tailwind CSS, Framer Motion, React Router DOM, Axios
+- **Backend:** Laravel 11, Laravel Sanctum, Eloquent ORM
+- **Database:** MySQL
+- **Tooling:** Vite, Composer, NPM
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## 🚀 Installation & Setup
 
-## Agentic Development
+Follow these instructions to get the project up and running on your local machine.
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+### Prerequisites
 
-```bash
-composer require laravel/boost --dev
+Ensure you have the following installed:
+- PHP >= 8.2
+- Composer
+- Node.js & NPM
+- MySQL
 
-php artisan boost:install
-```
+### Step-by-Step Guide
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+1. **Clone the Repository**
+   ```bash
+   git clone <repository-url>
+   cd "The Rustic Table"
+   ```
 
-## Contributing
+2. **Install PHP Dependencies**
+   ```bash
+   composer install
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+3. **Install NPM Dependencies**
+   ```bash
+   npm install
+   ```
 
-## Code of Conduct
+4. **Environment Configuration**
+   Duplicate the `.env.example` file and rename it to `.env`.
+   ```bash
+   cp .env.example .env
+   ```
+   Generate the application key:
+   ```bash
+   php artisan key:generate
+   ```
+   Update your `.env` file with your local MySQL database credentials and your SMTP mail configuration (e.g., Gmail SMTP) to enable the contact form and newsletter.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+5. **Database Migration & Seeding**
+   Run the migrations and populate the database with our rich, pre-configured content seeder (which includes 20+ recipes and test users):
+   ```bash
+   php artisan migrate:fresh --seed
+   ```
 
-## Security Vulnerabilities
+6. **Link Local Storage**
+   To ensure recipe thumbnail images load correctly, create a symbolic link from `public/storage` to `storage/app/public`:
+   ```bash
+   php artisan storage:link
+   ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+7. **Start the Development Servers**
+   You will need to run two separate terminals to serve the backend and the frontend assets.
 
-## License
+   Terminal 1 (Laravel Backend):
+   ```bash
+   php artisan serve
+   ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+   Terminal 2 (Vite Frontend):
+   ```bash
+   npm run dev
+   ```
+
+8. **Access the Application**
+   Open your browser and navigate to: `http://127.0.0.1:8000`
+
+---
+
+## 🔐 Test Accounts
+
+The database seeder automatically generates the following test accounts:
+
+**Admin User**
+- **Email:** `admin@example.com`
+- **Password:** `password`
+
+**Standard User**
+- **Email:** `user@example.com`
+- **Password:** `password`
+
+*(Additional test users with Indian names are also seeded automatically).*
+
+---
+
+## 📜 License
+
+The Rustic Table is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
