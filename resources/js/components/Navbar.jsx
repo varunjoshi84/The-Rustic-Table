@@ -23,7 +23,7 @@ export default function Navbar() {
                         <Link to="/" className="flex-shrink-0 flex items-center gap-3 group">
                             <svg className="w-9 h-9 text-rustic-800 group-hover:text-rustic-600 transition-colors" viewBox="0 0 100 100" fill="currentColor">
                                 <circle cx="50" cy="50" r="45" fill="currentColor"/>
-                                <text x="50" y="65" font-family="Georgia, serif" font-size="45" fill="#faf7f2" text-anchor="middle" font-weight="bold" font-style="italic">R</text>
+                                <text x="50" y="65" fontFamily="Georgia, serif" fontSize="45" fill="#faf7f2" textAnchor="middle" fontWeight="bold" fontStyle="italic">R</text>
                             </svg>
                             <span className="text-3xl font-heading font-bold text-rustic-800 group-hover:text-rustic-600 transition-colors">The Rustic Table</span>
                         </Link>

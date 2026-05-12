@@ -12,7 +12,6 @@ export default function GuestRoute({ children }) {
             </div>
         );
     }
-
     if (user) {
         return <Navigate to={user.role === 'admin' ? '/admin' : '/dashboard'} replace />;
     }

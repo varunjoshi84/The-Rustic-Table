@@ -52,7 +52,13 @@ function App() {
     );
 }
 
-ReactDOM.createRoot(document.getElementById('app')).render(
+const rootElement = document.getElementById('app');
+
+if (!window.__reactRoot) {
+    window.__reactRoot = ReactDOM.createRoot(rootElement);
+}
+
+window.__reactRoot.render(
     <React.StrictMode>
         <App />
     </React.StrictMode>
