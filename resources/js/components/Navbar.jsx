@@ -32,7 +32,7 @@ export default function Navbar() {
                     <div className="hidden sm:ml-6 sm:flex sm:items-center sm:space-x-8">
                         <Link to="/" className="text-rustic-800 hover:text-rustic-500 font-medium transition-colors">Home</Link>
                         <Link to="/recipes" className="text-rustic-800 hover:text-rustic-500 font-medium transition-colors">Recipes</Link>
-                       
+                        {/* <Link to="/categories" className="text-rustic-800 hover:text-rustic-500 font-medium transition-colors">Categories</Link> */}
                         
                         {user ? (
                             <div className="relative ml-3">
