@@ -11,6 +11,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PasswordResetController;
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
@@ -18,6 +19,11 @@ Route::post('/login', [AuthController::class, 'login']);
 // Public routes for Contact & Newsletter
 Route::post('/contact', [ContactController::class, 'submit']);
 Route::post('/newsletter', [NewsletterController::class, 'subscribe']);
+
+// Forgot Password routes
+Route::post('/forgot-password/send', [PasswordResetController::class, 'sendOtp']);
+Route::post('/forgot-password/verify', [PasswordResetController::class, 'verifyOtp']);
+Route::post('/forgot-password/reset', [PasswordResetController::class, 'resetPassword']);
 
 // Public routes for recipes
 Route::get('/recipes', [RecipeController::class, 'index']);

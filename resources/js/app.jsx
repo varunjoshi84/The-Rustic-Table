@@ -11,6 +11,7 @@ import GuestRoute from './components/GuestRoute';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import ForgotPassword from './pages/ForgotPassword';
 import Dashboard from './pages/Dashboard';
 import RecipeDetails from './pages/RecipeDetails';
 import RecipeForm from './pages/RecipeForm';
@@ -37,6 +38,7 @@ function App() {
                             <Route path="/blog" element={<Blog />} />
                             <Route path="/login" element={<GuestRoute><Login /></GuestRoute>} />
                             <Route path="/register" element={<GuestRoute><Register /></GuestRoute>} />
+                            <Route path="/forgot-password" element={<GuestRoute><ForgotPassword /></GuestRoute>} />
                             <Route path="/dashboard" element={<Dashboard />} />
                             <Route path="/dashboard/upload" element={<RecipeForm />} />
                             <Route path="/dashboard/edit/:id" element={<RecipeForm />} />
